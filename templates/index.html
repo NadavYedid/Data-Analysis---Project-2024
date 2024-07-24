@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הערכת מחיר רכב</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body dir="rtl">
+    <h1>הערכת מחיר רכב</h1>
+    <div class="container">
+        <form action="/predict" method="post">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="manufactor">יצרן:</label>
+                    <input type="text" id="manufactor" name="manufactor">
+
+                    <label for="model">דגם:</label>
+                    <input type="text" id="model" name="model">
+
+                    <label for="Year">שנת ייצור הרכב:</label>
+                    <input type="number" id="Year" name="Year" min="1900" max="2024">
+
+                    <label for="Hand">יד:</label>
+                    <input type="number" id="Hand" name="Hand" step="any">
+                </div>
+
+                <div class="form-column">
+                    <label for="Gear">סוג תיבת הילוכים:</label>
+                    <input type="text" id="Gear" name="Gear">
+
+                    <label for="Color">צבע:</label>
+                    <input type="text" id="Color" name="Color">
+
+                    <label for="Km">קילומטראז':</label>
+                    <input type="number" id="Km" name="Km" min="0">
+
+                    <label for="Prev_ownership">בעלות קודמת:</label>
+                    <input type="text" id="Prev_ownership" name="Prev_ownership">
+                </div>
+            </div>
+
+            <input type="submit" value="חשב מחיר">
+        </form>
+
+        {% if prediction_text %}
+        <div id="prediction_result">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

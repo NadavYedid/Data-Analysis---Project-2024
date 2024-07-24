@@ -1,0 +1,146 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center align text */
+}
+
+h1 {
+    font-size: 24px; /* Increase font size */
+    color: #333; /* Text color */
+    margin-top: 20px;
+    font-weight: bold; /* Make heading bold */
+}
+
+.container {
+    max-width: 800px; /* Increase width to fit two columns */
+    margin: 0 auto; /* Center container horizontally */
+    padding: 20px; /* Increase padding */
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Center align form elements */
+}
+
+form {
+    margin: 0 auto;
+    padding: 20px; /* Increase padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align form elements */
+}
+
+.form-row {
+    display: flex; /* Use flexbox for two columns */
+    justify-content: center; /* Center align columns */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.form-column {
+    flex: 1; /* Allow columns to grow */
+    max-width: 380px; /* Increase width of columns */
+    margin: 10px; /* Space between columns */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align form elements within columns */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* Increase space between labels and inputs */
+    font-size: 16px; /* Increase font size */
+    text-align: center; /* Center align text */
+    width: 100%; /* Make label take full width of container */
+    font-weight: bold; /* Make label text bold */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"] {
+    width: 100%; /* Full width inputs */
+    max-width: 300px; /* Increase width */
+    padding: 15px; /* Increase padding */
+    margin-bottom: 15px; /* Increase space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Make input text bold */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-size: 16px; /* Increase font size */
+    padding: 15px; /* Increase padding for the button */
+    border-radius: 4px;
+    font-weight: bold; /* Make button text bold */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#prediction_result {
+    margin-top: 20px;
+}
+
+#prediction_result h2 {
+    font-size: 20px; /* Increase font size for prediction text */
+    color: #333; /* Adjust text color */
+    font-weight: bold; /* Make prediction text bold */
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for screens smaller than 768px (tablets and phones) */
+    .container {
+        padding: 15px; /* Increase padding */
+        width: 90%; /* Make container width responsive */
+    }
+
+    h1 {
+        font-size: 20px; /* Increase font size */
+    }
+
+    label, input[type="text"], input[type="number"], input[type="submit"] {
+        font-size: 14px; /* Increase font size */
+    }
+
+    input[type="submit"] {
+        padding: 12px; /* Increase padding */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for screens smaller than 480px (phones) */
+    .container {
+        padding: 10px; /* Increase padding */
+        width: 95%; /* Make container width responsive */
+    }
+
+    h1 {
+        font-size: 18px; /* Increase font size */
+    }
+
+    label, input[type="text"], input[type="number"], input[type="submit"] {
+        font-size: 12px; /* Increase font size */
+    }
+
+    input[type="submit"] {
+        padding: 10px; /* Increase padding */
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack columns on top of each other on small screens */
+    }
+
+    .form-column {
+        max-width: 100%; /* Full width columns on small screens */
+        margin: 0; /* Remove margin between columns */
+    }
+}
